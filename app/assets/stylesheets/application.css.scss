@@ -17,6 +17,8 @@
  
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 .navbar, .home-callout {
     background: #00c6ff;  /* fallback for old browsers */
@@ -31,7 +33,7 @@
     color: white;
 }
 
-.navbar-default.navbar-brand,
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
     color: white;
     &:hover{
