@@ -14,6 +14,9 @@ class ContactsController < ApplicationController
             
             #Assign these variables to send email.
             
+            #Remember: In Ruby, a hash value is retrieved by doing hashname[:hashkey]
+            #This will evaluate to the hash's key value. This premise is used below, but more complicated.
+            
             #Why we access params the way we do: -------------------------------------------|
             #params is a hash. Contact is a hash bult with more hashes inside of it.
             #It looks like this: "contact" => {"name"=>"John Doe"}
@@ -23,11 +26,11 @@ class ContactsController < ApplicationController
             #So to pull the name you would do: [:contact] to open up the first hash,
             #Then you would do [:name] to open up the second hash. These are nested within
             #each other.
-            #Hash Map:
+            
+            #params hashmap:
             #utf8
             #authenticity_token
             #contact
-            #   |
             #   |- name
             #   |- email
             #   |- comments
