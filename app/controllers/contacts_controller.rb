@@ -13,8 +13,27 @@ class ContactsController < ApplicationController
         if @contact.save
             
             #Assign these variables to send email.
+            
+            #Why we access params the way we do: -------------------------------------------|
+            #params is a hash. Contact is a hash bult with more hashes inside of it.
+            #It looks like this: "contact" => {"name"=>"John Doe"}
+            
+            #To access these parameters, you must first access the contact hash key,
+            #Then you need to access the key inside the contact hash.
+            #So to pull the name you would do: [:contact] to open up the first hash,
+            #Then you would do [:name] to open up the second hash. These are nested within
+            #each other.
+            #Hash Map:
+            #utf8
+            #authenticity_token
+            #contact
+            #   |
+            #   |- name
+            #   |- email
+            #   |- comments
+            
             name = params[:contact][:name]
-            email = params[:contact][:name]
+            email = params[:contact][:email]
             body = params[:contact][:comments]
             
             #Mail with assigned variables above and using the method defined in the mailer folderr
