@@ -3,13 +3,17 @@ class ContactsController < ApplicationController
         @contact = Contact.new
     end
     
+    #POST request /contacts
     def create
         #Create a new contact with the params passed in the private code block below
         #It is assigned this way for security purposes.
         #The contact @instanceVariable is referring to the new contact object created
         #above. The contact created above is following a blueprint laid out in the model folder.
         
+        #This mass assigns form fields into Contact object
         @contact = Contact.new(contact_params)
+        
+        #Save the contact object to the database.
         if @contact.save
             
             #Assign these variables to send email.
