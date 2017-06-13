@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h1 class= "text-center">DevMatch Community Users</h1>
             <ul class="list-unstyled">
                 <% @users.each do |user| %>
                     <% if user.profile %>
@@ -17,7 +18,12 @@
                                     <%= link_to user do %>
                                         <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                                     <% end %>
-                                        <p><%= user.profile.job_title %></p>
+                                        <p>
+                                            <%= user.profile.job_title %>
+                                            <% if user.plan_id == 2 %>
+                                                <span class="label label-danger">Pro</span>
+                                            <% end %>
+                                        </p>
                                 </div>
                             </div>
                         </li>
